@@ -26,7 +26,6 @@ int main(void)
 			printf("Congratuation!!! YOU WIN\n");
 			chance = 0;
 		} else {
-		//	printf("Sorry you are wrong.\nYour ans: %d. Correct number: %d.\n", guess, r);
 			chance--;
 			if (guess > r) printf("-----Too large-----\n");
 			else printf("-----Too small-----\n");
@@ -34,6 +33,8 @@ int main(void)
 			if (chance > 0) {
 				printf("Try again... Chance last: %d\n", chance);
 				scanf("%d", &guess);
+			} else {
+				printf("The ans is: %d.\n", r);
 			}
 		}
 	}
