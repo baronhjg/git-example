@@ -9,10 +9,14 @@
 int main(void)
 {
 	int r, guess;
+	int chance;
+
 	srand(time(NULL));
 	
 	r = (rand() % 100) + 1;
-
+	
+	printf("Input your chances: ");
+	scanf("%d", &chance);
 	printf("Guess a number: ");
 	scanf("%d", &guess);
 
