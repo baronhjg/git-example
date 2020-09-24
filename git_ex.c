@@ -1,4 +1,4 @@
-// Guess number game
+// Git_ex: A Guessing number game
 // Jorge
 // Date: 2020/09/24
 
@@ -17,16 +17,25 @@ int main(void)
 	
 	printf("Input your chances: ");
 	scanf("%d", &chance);
+	
 	printf("Guess a number: ");
 	scanf("%d", &guess);
-
-	if (guess == r) printf("Congratuation!!! YOU WIN\n");
-	else {
-		printf("Sorry you are wrong.\nYour ans: %d. Correct number: %d.\n", guess, r);
-		if (guess > r) printf("-----Too large-----\n");
-		else printf("-----Too small-----\n");
+	
+	while (chance > 0) {
+		if (guess == r) {
+			printf("Congratuation!!! YOU WIN\n");
+			chance = 0;
+		} else {
+		//	printf("Sorry you are wrong.\nYour ans: %d. Correct number: %d.\n", guess, r);
+			chance--;
+			if (guess > r) printf("-----Too large-----\n");
+			else printf("-----Too small-----\n");
+			
+			if (chance > 0) {
+				printf("Try again... Chance last: %d\n", chance);
+				scanf("%d", &guess);
+			}
+		}
 	}
-
 	return 0;
 }
-
